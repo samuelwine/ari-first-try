@@ -1,0 +1,15 @@
+C:\Users\samue\source\repos\ari-first-try\bin\Debug\net6.0\ari-first-try.exe
+C:\Users\samue\source\repos\ari-first-try\bin\Debug\net6.0\ari-first-try.deps.json
+C:\Users\samue\source\repos\ari-first-try\bin\Debug\net6.0\ari-first-try.runtimeconfig.json
+C:\Users\samue\source\repos\ari-first-try\bin\Debug\net6.0\ari-first-try.dll
+C:\Users\samue\source\repos\ari-first-try\bin\Debug\net6.0\ref\ari-first-try.dll
+C:\Users\samue\source\repos\ari-first-try\bin\Debug\net6.0\ari-first-try.pdb
+C:\Users\samue\source\repos\ari-first-try\obj\Debug\net6.0\ari-first-try.csproj.AssemblyReference.cache
+C:\Users\samue\source\repos\ari-first-try\obj\Debug\net6.0\ari-first-try.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samue\source\repos\ari-first-try\obj\Debug\net6.0\ari-first-try.AssemblyInfoInputs.cache
+C:\Users\samue\source\repos\ari-first-try\obj\Debug\net6.0\ari-first-try.AssemblyInfo.cs
+C:\Users\samue\source\repos\ari-first-try\obj\Debug\net6.0\ari-first-try.csproj.CoreCompileInputs.cache
+C:\Users\samue\source\repos\ari-first-try\obj\Debug\net6.0\ari-first-try.dll
+C:\Users\samue\source\repos\ari-first-try\obj\Debug\net6.0\ref\ari-first-try.dll
+C:\Users\samue\source\repos\ari-first-try\obj\Debug\net6.0\ari-first-try.pdb
+C:\Users\samue\source\repos\ari-first-try\obj\Debug\net6.0\ari-first-try.genruntimeconfig.cache
