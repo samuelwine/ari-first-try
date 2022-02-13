@@ -6056,26 +6056,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\samue\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\samue\\source\\repos\\ari-first-try\\ari-first-try.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\ari-first-try\\ari-first-try.csproj",
       "projectName": "ari-first-try",
-      "projectPath": "C:\\Users\\samue\\source\\repos\\ari-first-try\\ari-first-try.csproj",
-      "packagesPath": "C:\\Users\\samue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\samue\\source\\repos\\ari-first-try\\obj\\",
+      "projectPath": "C:\\Users\\HP\\source\\repos\\ari-first-try\\ari-first-try.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\source\\repos\\ari-first-try\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\samue\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -6084,6 +6083,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\HP\\Desktop": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
