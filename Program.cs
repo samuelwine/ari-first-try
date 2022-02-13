@@ -12,5 +12,21 @@
 //https://run.mocky.io/v3/7b053044-6663-4c62-8592-5725c6220c12
 //https://designer.mocky.io/manage/delete/7b053044-6663-4c62-8592-5725c6220c12/RbKe9ENOtg5t5Gg8KJXlClvpOexhdpSJbd1D
 
+using System.Net.WebSockets;
+using AsterNET.ARI;
+using AsterNET.ARI.Middleware.Default;
+using Microsoft.AspNetCore.SignalR.Client;
+
+string host = "135.181.204.69";
+int port = 8088;
+string username = "aht";
+string password = "hello";
+string application = "ari-first-try";
+StasisEndpoint endpoint = new StasisEndpoint(host, port, username, password);
+var uri = $"ws://{host}:{port}/ari/events?api_key={username}:{password}&app={application}";
+var ws = new ClientWebSocket();
+await ws.ConnectAsync(new Uri(uri), CancellationToken.None);
+Console.WriteLine($"state:{ws.State}");
+await ws.ReceiveAsync(new byte[2048],CancellationToken.None);
 
 
