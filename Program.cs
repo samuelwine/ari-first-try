@@ -24,9 +24,13 @@ StasisEndpoint endpoint = new StasisEndpoint(host, port, username, password);
 var uri = $"ws://{host}:{port}/ari/events?api_key={username}:{password}&app={application}";
 
 AriClient client = new AriClient(endpoint, application);
-client.OnStasisStartEvent += (ac, se) =>
+client.OnStasisStartEvent += async (ac, se) =>
 {
     ac.Channels.Answer(se.Channel.Id);
+    HttpClient httpClient = new HttpClient();
+    httpClient.DefaultRequestHeaders.Accept.Clear();
+    var json = await httpClient.GetAsync("https://run.mocky.io/v3/7b053044-6663-4c62-8592-5725c6220c12");
+    
     SyncHelper.Wait(ac.Channels.Play(se.Channel.Id, "sound:moo2"), client);
     ac.Channels.Hangup(se.Channel.Id);
 };
