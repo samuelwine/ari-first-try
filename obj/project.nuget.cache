@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sNwcxDeKK2t+XguCWTjjotcBFIA4ZgPqFqbVADR7BtaRu97frWbMe1LWcBznWBCqDJAEwSF+WYKW1lkTc1DqSg==",
+  "dgSpecHash": "HzDsdGn01+odxtVc0UArw0SjSb8cCnIF2FoyyUn0p1fSM1JaKCZF9uqvWu+GFodr/n6zT1PJi5olS725ZlGysA==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\source\\repos\\ari-first-try\\ari-first-try.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,15 @@
     "C:\\Users\\HP\\.nuget\\packages\\fubarcoder.restsharp.portable.encodings\\4.0.8\\fubarcoder.restsharp.portable.encodings.4.0.8.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\fubarcoder.restsharp.portable.httpclient\\4.0.8\\fubarcoder.restsharp.portable.httpclient.4.0.8.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\5.0.0\\microsoft.extensions.configuration.fileextensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.configuration.json\\5.0.0\\microsoft.extensions.configuration.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.configuration.usersecrets\\5.0.0\\microsoft.extensions.configuration.usersecrets.5.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\5.0.0\\microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\5.0.0\\microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\5.0.0\\microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",

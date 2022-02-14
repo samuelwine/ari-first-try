@@ -16,11 +16,12 @@ using AsterNET.ARI;
 using AsterNET.ARI.Helpers;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.Extensions.Configuration;
 
-string host = "135.181.204.69";
-int port = 8088;
-string username = "aht";
-string password = "hello";
+public IConfiguration config {
+    get;
+    set;
+}
 string application = "hello-world";
 StasisEndpoint endpoint = new StasisEndpoint(host, port, username, password);
 var uri = $"ws://{host}:{port}/ari/events?api_key={username}:{password}&app={application}";

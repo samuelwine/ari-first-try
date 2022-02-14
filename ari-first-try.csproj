@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,10 +6,12 @@
     <RootNamespace>ari_first_try</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UserSecretsId>80e5ece6-fb4d-4322-8ead-fa3fecd3f730</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AsterNET.ARI" Version="1.2.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
   </ItemGroup>
 
 </Project>
