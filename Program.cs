@@ -12,37 +12,49 @@
 //https://run.mocky.io/v3/dcd26e99-8b09-4461-b6d1-5ba77057edaf
 //https://designer.mocky.io/manage/delete/dcd26e99-8b09-4461-b6d1-5ba77057edaf/x3XryUZX0YximC6ps3A2vxcRNlnsR1fE3vW5
 
+using System.Net;
 using AsterNET.ARI;
 using AsterNET.ARI.Helpers;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-public IConfiguration config {
-    get;
-    set;
-}
+var config = new ConfigurationBuilder()
+    .AddUserSecrets<Program>()
+    .Build();
+//using IHost ghost = Host.CreateDefaultBuilder(args).Build();
+//IConfiguration config = ghost.Services.GetRequiredService<IConfiguration>();
+//string password = config.GetValue<string>("password");
+//await host.RunAsync();
+
+string host = "135.181.204.69";
+int port = 8088;
+string username = "aht";
+string password = "hello";
 string application = "hello-world";
 StasisEndpoint endpoint = new StasisEndpoint(host, port, username, password);
 var uri = $"ws://{host}:{port}/ari/events?api_key={username}:{password}&app={application}";
 
 AriClient client = new AriClient(endpoint, application);
-client.OnStasisStartEvent += async (ac, se) =>
+client.OnStasisStartEvent += (ac, se) =>
 {
     ac.Channels.Answer(se.Channel.Id);
-    HttpClient httpClient = new HttpClient();
-    httpClient.DefaultRequestHeaders.Accept.Clear();
-    var json = await httpClient.GetStringAsync("https://run.mocky.io/v3/35f18658-c49e-4652-ba43-434a7f260e0d");
-    var response = JsonSerializer.Deserialize<ResultObj>(json);
-    if(response.Pin == "8888")
-    {
-        SyncHelper.Wait(ac.Channels.Play(se.Channel.Id, "sound:moo2"), client);
-    }
-    else
-    {
-        SyncHelper.Wait(ac.Channels.Play(se.Channel.Id, "sound:you-wish-to-join"), client);
-    }
+    ac.Channels.Play(se.Channel.Id, "sound:moo2").Wait(ac);
     ac.Channels.Hangup(se.Channel.Id);
+    //HttpClient httpClient = new HttpClient();
+    //httpClient.DefaultRequestHeaders.Accept.Clear();
+    //var json = await httpClient.GetStringAsync("https://run.mocky.io/v3/35f18658-c49e-4652-ba43-434a7f260e0d");
+    //var response = JsonSerializer.Deserialize<ResultObj>(json);
+    //if (response.Pin == "8888")
+    //{
+    //    SyncHelper.Wait(ac.Channels.Play(se.Channel.Id, "sound:moo2"), client);
+    //}
+    //else
+    //{
+    //    SyncHelper.Wait(ac.Channels.Play(se.Channel.Id, "sound:you-wish-to-join"), client);
+    //}
 };
 client.Connect();
 Console.ReadKey();
