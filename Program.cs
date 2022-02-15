@@ -14,9 +14,8 @@ string password = config.GetValue<string>("aht_ari_password");
 string application = config.GetValue<string>("aht_ari_application");
 
 StasisEndpoint endpoint = new StasisEndpoint(ip, port, username, password);
-var uri = $"ws://{ip}:{port}/ari/events?api_key={username}:{password}&app={application}";
-
 AriClient client = new AriClient(endpoint, application);
+
 client.OnStasisStartEvent += (ariClient, startEvent) =>
 {
     ariClient.Channels.Answer(startEvent.Channel.Id);
