@@ -4,8 +4,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-var host = Host.CreateDefaultBuilder(args).Build();
-var config = host.Services.GetRequiredService<IConfiguration>();
+var config = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddUserSecrets<Program>()
+    .Build();
 
 string ip = config.GetValue<string>("aht_ari_ip");
 int port = config.GetValue<int>("aht_ari_port");
