@@ -21,21 +21,24 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-var config = new ConfigurationBuilder()
-    .AddUserSecrets<Program>()
-    .Build();
-//using IHost ghost = Host.CreateDefaultBuilder(args).Build();
-//IConfiguration config = ghost.Services.GetRequiredService<IConfiguration>();
+//var configg = new ConfigurationBuilder()
+//    .AddUserSecrets<Program>()
+//    .Build();
+var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+var builder = Host.CreateDefaultBuilder(args).Build();
+//builder.ConfigureAppConfiguration(builder => builder.AddUserSecrets<Program>());
+//var host = builder.Build();
+//IConfiguration config = host.Services.GetRequiredService<IConfiguration>();
 //string password = config.GetValue<string>("password");
 //await host.RunAsync();
-
-string host = "135.181.204.69";
+string s = "135.181.204.69";
 int port = 8088;
 string username = "aht";
 string password = "hello";
 string application = "hello-world";
-StasisEndpoint endpoint = new StasisEndpoint(host, port, username, password);
-var uri = $"ws://{host}:{port}/ari/events?api_key={username}:{password}&app={application}";
+StasisEndpoint endpoint = new StasisEndpoint(s, port, username, password);
+var uri = $"ws://{s}:{port}/ari/events?api_key={username}:{password}&app={application}";
 
 AriClient client = new AriClient(endpoint, application);
 client.OnStasisStartEvent += (ac, se) =>

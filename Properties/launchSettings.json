@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ari-first-try": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "\"Development\""
+      }
+    }
+  }
+}
