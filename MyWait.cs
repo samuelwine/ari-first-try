@@ -5,7 +5,7 @@ namespace ari_first_try
 {
     public static class SyncHelper
     {
-        public static void MyWait(
+        public static void WaitForPlaybackEnd(
             this Playback playback,
             IAriEventClient client)
         {
