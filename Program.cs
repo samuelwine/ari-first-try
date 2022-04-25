@@ -1,5 +1,4 @@
 ﻿using AsterNET.ARI;
-using FFmpeg.NET;
 using Microsoft.Extensions.Configuration;
 using System.Speech.Synthesis;
 
@@ -37,12 +36,18 @@ client.OnStasisStartEvent += (ariClient, startEvent) =>
 
         var testString = "This is a test string being sent to Asterisk via RTP";
         var synthesizer = new SpeechSynthesizer();
-        synthesizer.SetOutputToWaveFile("C:\\Users\\HP\\Downloads\\");
+        synthesizer.SetOutputToWaveFile(@"C:\Users\samue\Downloads\mynewstring.wav");
+        //synthesizer.SetOutputToDefaultAudioDevice();
+        synthesizer.Speak(testString);
 
-        var ffmpeg = new Engine("C:\\ProgramData\\chocolatey\\bin");
-        ffmpeg.ExecuteAsync(
-            @$"-re -i c:/users/hp/downloads/enter-account-number.g722 -f rtp -payload_type 0 rtp://{ip}:{listeningPort}",
-            new CancellationToken());
+        var ffmpegPath = "C:\\Users\\samue\\OneDrive\\Desktop\\ffmpeg.exe";
+        var ffmpegArgs = $"-re -i \"c:/users/samue/downloads/mynewstring.wav\" -f rtp -payload_type 0 \"rtp://{ip}:{listeningPort}\"";
+        var proc = System.Diagnostics.Process.Start(ffmpegPath, ffmpegArgs);
+
+        //var ffmpeg = new Engine();
+        //ffmpeg.ExecuteAsync(
+        //    @$"-re -i c:/users/samue/downloads/mynewstring.wav -f rtp -payload_type 0 rtp://{ip}:{listeningPort}",
+        //    new CancellationToken());
     }
 
     //var c = ariClient.Channels.Get(externalMediaChannel.Id);

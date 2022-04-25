@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aDFjGIb+1453RsypPKOwZcBr2sU9IuDuFPf/JIb3JUgV+AD7ytLRjALTQoZJRHvAXSXIq0MwBTAuI3+D1filWg==",
+  "dgSpecHash": "l5hH43pttFMMOgxg1Dajy7T2Ky5Uz5MTMg2cv7A33hR2Uv/KEPQWG8iUmeHucstjBmbW7yf6ZpfZyFvy5f5HPg==",
   "success": true,
   "projectFilePath": "C:\\Users\\samue\\source\\repos\\ari-first-try\\ari-first-try.csproj",
   "expectedPackageFiles": [
@@ -100,8 +100,7 @@
     "C:\\Users\\samue\\.nuget\\packages\\system.threading.thread\\4.3.0\\system.threading.thread.4.3.0.nupkg.sha512",
     "C:\\Users\\samue\\.nuget\\packages\\system.threading.threadpool\\4.3.0\\system.threading.threadpool.4.3.0.nupkg.sha512",
     "C:\\Users\\samue\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
-    "C:\\Users\\samue\\.nuget\\packages\\websocket4net\\0.15.2\\websocket4net.0.15.2.nupkg.sha512",
-    "C:\\Users\\samue\\.nuget\\packages\\xffmpeg.net\\7.1.3\\xffmpeg.net.7.1.3.nupkg.sha512"
+    "C:\\Users\\samue\\.nuget\\packages\\websocket4net\\0.15.2\\websocket4net.0.15.2.nupkg.sha512"
   ],
   "logs": []
 }
