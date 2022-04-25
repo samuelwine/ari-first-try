@@ -1,6 +1,5 @@
 ﻿using AsterNET.ARI;
 using Microsoft.Extensions.Configuration;
-using System.Speech.Synthesis;
 
 var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -34,11 +33,11 @@ client.OnStasisStartEvent += (ariClient, startEvent) =>
         ariClient.Bridges.AddChannel(bridge.Id, startEvent.Channel.Id);
         ariClient.Bridges.AddChannel(bridge.Id, externalMediaChannel.Id);
 
-        var testString = "This is a test string being sent to Asterisk via RTP";
-        var synthesizer = new SpeechSynthesizer();
-        synthesizer.SetOutputToWaveFile(@"C:\Users\samue\Downloads\mynewstring.wav");
-        //synthesizer.SetOutputToDefaultAudioDevice();
-        synthesizer.Speak(testString);
+        //var testString = "This is a test string being sent to Asterisk via RTP";
+        //var synthesizer = new SpeechSynthesizer();
+        //synthesizer.SetOutputToWaveFile(@"C:\Users\samue\Downloads\mynewstring.wav");
+        ////synthesizer.SetOutputToDefaultAudioDevice();
+        //synthesizer.Speak(testString);
 
         var ffmpegPath = "C:\\Users\\samue\\OneDrive\\Desktop\\ffmpeg.exe";
         var ffmpegArgs = $"-re -i \"c:/users/samue/downloads/mynewstring.wav\" -f rtp -payload_type 0 \"rtp://{ip}:{listeningPort}\"";
