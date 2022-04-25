@@ -1,5 +1,6 @@
 ﻿using AsterNET.ARI;
 using Microsoft.Extensions.Configuration;
+using System.Speech.Synthesis;
 
 var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -15,17 +16,32 @@ string application = config.GetValue<string>("aht_ari_application");
 StasisEndpoint endpoint = new StasisEndpoint(ip, port, username, password);
 AriClient client = new AriClient(endpoint, application);
 
-var times = 0;
 client.OnStasisStartEvent += (ariClient, startEvent) =>
 {
-
-    if (times == 0)
+    if (startEvent.Channel.Name.StartsWith("PJSIP"))
     {
-        times++;
-        var externalMediaChannel = ariClient.Channels.ExternalMedia("hello-world", "rtp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4", "slin");
+        //ariClient.Channels.Play(startEvent.Channel.Id, "sound:moo2");
+        //ariClient.Channels.Play(startEvent.Channel.Id, "sound:moo2");
+        //ariClient.Channels.Play(startEvent.Channel.Id, "sound:moo2");
+        //ariClient.Channels.Play(startEvent.Channel.Id, "sound:moo2");
+        //ariClient.Channels.Play(startEvent.Channel.Id, "sound:moo2");
+        //ariClient.Channels.Play(startEvent.Channel.Id, "sound:moo2");
+
+        var externalMediaChannel = ariClient.Channels.ExternalMedia("hello-world", "192.168.8.122:12272", "slin");
+        var channelVars = externalMediaChannel.Channelvars as Dictionary<string, object>;
+        var listeningPort = channelVars["UNICASTRTP_LOCAL_PORT"].ToString();
         var bridge = ariClient.Bridges.Create();
-        ariClient.Bridges.AddChannel(bridge.Id, externalMediaChannel.Id);
         ariClient.Bridges.AddChannel(bridge.Id, startEvent.Channel.Id);
+        ariClient.Bridges.AddChannel(bridge.Id, externalMediaChannel.Id);
+
+        var testString = "This is a test string being sent to Asterisk via RTP";
+        var synthesizer = new SpeechSynthesizer();
+        synthesizer.SetOutputToWaveStream(new MemoryStream());
+
+        var ffmpeg = new Engine("C:\\ProgramData\\chocolatey\\lib\\ffmpeg\\tools\\ffmpeg\\bin\\ffmpeg.exe");
+        ffmpeg.ExecuteAsync(
+            @$"-re -i c:/users/hp/downloads/enter-account-number.g722 -f rtp -payload_type 0 rtp://{ip}:{listeningPort}",
+            new CancellationToken());
     }
 
     //var c = ariClient.Channels.Get(externalMediaChannel.Id);

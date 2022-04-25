@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Bw3FEhXvnV5EsM/qRXCHwGoQGxcPIZ+eaELa6LmEcL/iTvWj01aLuQ2sNqdSx3THDT7nx5rhHe96Mqb5gpVMKg==",
+  "dgSpecHash": "l5hH43pttFMMOgxg1Dajy7T2Ky5Uz5MTMg2cv7A33hR2Uv/KEPQWG8iUmeHucstjBmbW7yf6ZpfZyFvy5f5HPg==",
   "success": true,
   "projectFilePath": "C:\\Users\\samue\\source\\repos\\ari-first-try\\ari-first-try.csproj",
   "expectedPackageFiles": [
@@ -90,6 +90,7 @@
     "C:\\Users\\samue\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.3.0\\system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
     "C:\\Users\\samue\\.nuget\\packages\\system.security.principal\\4.3.0\\system.security.principal.4.3.0.nupkg.sha512",
     "C:\\Users\\samue\\.nuget\\packages\\system.security.principal.windows\\4.3.0\\system.security.principal.windows.4.3.0.nupkg.sha512",
+    "C:\\Users\\samue\\.nuget\\packages\\system.speech\\6.0.0\\system.speech.6.0.0.nupkg.sha512",
     "C:\\Users\\samue\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\samue\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\samue\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
