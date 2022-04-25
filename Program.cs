@@ -37,7 +37,7 @@ client.OnStasisStartEvent += (ariClient, startEvent) =>
 
         var testString = "This is a test string being sent to Asterisk via RTP";
         var synthesizer = new SpeechSynthesizer();
-        synthesizer.SetOutputToWaveStream(new MemoryStream());
+        synthesizer.SetOutputToWaveFile("C:\\Users\\HP\\Downloads\\");
 
         var ffmpeg = new Engine("C:\\ProgramData\\chocolatey\\bin");
         ffmpeg.ExecuteAsync(
