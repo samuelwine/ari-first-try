@@ -39,7 +39,7 @@ client.OnStasisStartEvent += (ariClient, startEvent) =>
         var synthesizer = new SpeechSynthesizer();
         synthesizer.SetOutputToWaveStream(new MemoryStream());
 
-        var ffmpeg = new Engine("C:\\ProgramData\\chocolatey\\lib\\ffmpeg\\tools\\ffmpeg\\bin\\ffmpeg.exe");
+        var ffmpeg = new Engine("C:\\ProgramData\\chocolatey\\bin");
         ffmpeg.ExecuteAsync(
             @$"-re -i c:/users/hp/downloads/enter-account-number.g722 -f rtp -payload_type 0 rtp://{ip}:{listeningPort}",
             new CancellationToken());
