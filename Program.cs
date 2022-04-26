@@ -40,7 +40,8 @@ client.OnStasisStartEvent += (ariClient, startEvent) =>
         //synthesizer.Speak(testString);
 
         var ffmpegPath = "C:\\Users\\samue\\OneDrive\\Desktop\\ffmpeg.exe";
-        var ffmpegArgs = $"-re -i \"c:/users/samue/downloads/mynewstring.wav\" -f rtp -payload_type 0 \"rtp://{ip}:{listeningPort}\"";
+        //var ffmpegArgs = $"-re -i \"c:/users/samue/downloads/mynewstring.wav\" -c:a copy -f rtp -payload_type 9 \"rtp://192.168.8.122:17896\"";
+        var ffmpegArgs = $"-re -i \"c:/users/samue/downloads/mynewstring.wav\" -acodec s16le -f rtp -payload_type 0 \"rtp://{ip}:{listeningPort}\"";
         var proc = System.Diagnostics.Process.Start(ffmpegPath, ffmpegArgs);
 
         //var ffmpeg = new Engine();
