@@ -26,7 +26,7 @@ client.OnStasisStartEvent += (ariClient, startEvent) =>
         //ariClient.Channels.Play(startEvent.Channel.Id, "sound:moo2");
         //ariClient.Channels.Play(startEvent.Channel.Id, "sound:moo2");
 
-        var externalMediaChannel = ariClient.Channels.ExternalMedia("hello-world", "192.168.8.122:12272", "slin");
+        var externalMediaChannel = ariClient.Channels.ExternalMedia("hello-world", "192.168.8.122:12272", "g722");
         var channelVars = externalMediaChannel.Channelvars as Dictionary<string, object>;
         var listeningPort = channelVars["UNICASTRTP_LOCAL_PORT"].ToString();
         var bridge = ariClient.Bridges.Create();
@@ -38,10 +38,12 @@ client.OnStasisStartEvent += (ariClient, startEvent) =>
         //synthesizer.SetOutputToWaveFile(@"C:\Users\samue\Downloads\mynewstring.wav");
         ////synthesizer.SetOutputToDefaultAudioDevice();
         //synthesizer.Speak(testString);
+        //ffmpeg - re - i "c:/users/samue/downloads/mynewstring.wav" - c:a copy -f rtp - payload_type 0 "rtp://192.168.8.122:17896"
 
         var ffmpegPath = "C:\\Users\\samue\\OneDrive\\Desktop\\ffmpeg.exe";
         //var ffmpegArgs = $"-re -i \"c:/users/samue/downloads/mynewstring.wav\" -c:a copy -f rtp -payload_type 9 \"rtp://192.168.8.122:17896\"";
-        var ffmpegArgs = $"-re -i \"c:/users/samue/downloads/mynewstring.wav\" -acodec s16le -f rtp -payload_type 0 \"rtp://{ip}:{listeningPort}\"";
+
+        var ffmpegArgs = $"-re -i \"c:/users/samue/downloads/mynewstring.g722\" -acodec g722 -filter:a \"atempo=0.5,atempo=0.5,atempo=0.5 \" -f rtp -payload_type 9 \"rtp://{ip}:{listeningPort}\"";
         var proc = System.Diagnostics.Process.Start(ffmpegPath, ffmpegArgs);
 
         //var ffmpeg = new Engine();
